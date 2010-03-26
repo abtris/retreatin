@@ -72,9 +72,9 @@ class ZFCore_Utils
      */ 
     public static function log($message, array $options = null)
     {
-        $loggerApp = Zend_Registry::getInstance()->get('loggerApp');
-        $loggerApp->log($message, Zend_Log::DEBUG);
+        $loggerApp = Zend_Registry::getInstance()->get('logger');
+        $loggerApp->log($message, Zend_Log::INFO);
     }
-    
+
 }
 
