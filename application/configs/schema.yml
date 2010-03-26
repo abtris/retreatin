@@ -1,0 +1,23 @@
+Users:
+  columns:
+    idUser:
+      primary: true
+      type: integer(4)
+      autoincrement: true
+    email:
+      unique: true
+      type: string(255)
+      notnull: true
+    password:
+      type: string(255)
+    groupMember:
+      type: integer(4)
+Groups:
+  columns:
+    idGroup:
+      primary: true
+      type: integer(4)
+      autoincrement: true
+    name:
+      type: string(255)
+      notnull: true
