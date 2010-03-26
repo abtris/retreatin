@@ -1,0 +1,24 @@
+2010-03-26T11:58:31+01:00 INFO (6): [%module%] [%controller%] Add registration
+2010-03-26T11:59:19+01:00 INFO (6): [%module%] [%controller%] Add registration
+2010-03-26T11:59:45+01:00 INFO (6): [%module%] [%controller%] Add registration
+2010-03-26T12:00:03+01:00 INFO (6): [%module%] [%controller%] Add registration
+2010-03-26T12:04:41+01:00 INFO (6): [%module%] [%controller%] Add registration
+2010-03-26T12:04:56+01:00 INFO (6): [%module%] [%controller%] Add registration
+2010-03-26T12:06:34+01:00 INFO (6): [%module%] [%controller%] Add registration
+2010-03-26T12:10:28+01:00 INFO (6): [%module%] [%controller%] Add registration
+2010-03-26T12:11:23+01:00 INFO (6): [%module%] [%controller%] Add registration: array (
+  'name' => 'prskavecl',
+  'surname' => 'test',
+  'email' => 'admin@brainsourz.com',
+  'country' => 'ffsdfsd',
+  'gar' => '3',
+  'membershipnumber' => '121211',
+  ' membershiptype' => NULL,
+  'recording' => '1',
+  'wholeretreat' => '1',
+  'datefrom' => '43434',
+  'dateto' => '434343',
+  'children' => '1',
+  'childrencount' => '33',
+  'eat' => '2',
+)

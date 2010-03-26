@@ -55,7 +55,7 @@ class Application_Form_Registration extends Zend_Form
                 'Label'=>'Membership number'
         ));
 
-        $this->addElement('select', ' membershiptype', array(
+        $this->addElement('select', 'membershiptype', array(
                 'Label' => 'Membership type',
                 'multioptions' => array(
                     0 => '--- please select your membership type  ---',

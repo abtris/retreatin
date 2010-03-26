@@ -36,8 +36,8 @@ Registration:
     membershiptype: integer(4)
     recording: boolean
     wholeretreat: boolean
-    datefrom: date
-    dateto: date
+    datefrom: string(30)
+    dateto: string(30)
     children: boolean
     childrencount: integer(4)
     eat: boolean
