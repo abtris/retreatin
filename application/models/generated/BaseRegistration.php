@@ -15,8 +15,8 @@
  * @property integer $membershiptype
  * @property boolean $recording
  * @property boolean $wholeretreat
- * @property date $datefrom
- * @property date $dateto
+ * @property string $datefrom
+ * @property string $dateto
  * @property boolean $children
  * @property integer $childrencount
  * @property boolean $eat
@@ -72,11 +72,13 @@ abstract class BaseRegistration extends Doctrine_Record
         $this->hasColumn('wholeretreat', 'boolean', null, array(
              'type' => 'boolean',
              ));
-        $this->hasColumn('datefrom', 'date', null, array(
-             'type' => 'date',
+        $this->hasColumn('datefrom', 'string', 30, array(
+             'type' => 'string',
+             'length' => '30',
              ));
-        $this->hasColumn('dateto', 'date', null, array(
-             'type' => 'date',
+        $this->hasColumn('dateto', 'string', 30, array(
+             'type' => 'string',
+             'length' => '30',
              ));
         $this->hasColumn('children', 'boolean', null, array(
              'type' => 'boolean',
