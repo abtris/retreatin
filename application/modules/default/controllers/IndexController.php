@@ -5,7 +5,10 @@ class Default_IndexController extends Zend_Controller_Action
 
     public function init()
     {
-        /* Initialize action controller here */
+        $registry = Zend_Registry::getInstance();
+        $this->logger = $registry->get('logger');
+        $this->logger->setEventItem('module', $this->getRequest()->getModuleName());
+        $this->logger->setEventItem('controller', $this->getRequest()->getControllerName());        
     }
 
     public function indexAction()
