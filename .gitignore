@@ -1,2 +1,7 @@
 *~
 logs/*
+library/Zend
+library/ZendX
+library/vendor/
+library/Doctrine.php
+library/Doctrine/
