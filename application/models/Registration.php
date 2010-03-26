@@ -13,4 +13,15 @@
 class Registration extends BaseRegistration
 {
 
+    public static function save($array)
+    {
+        $r  = new Registration();
+        $r->name = $array['name'];
+        $r->surname = $array['surname'];
+        $r->email = $array['email'];
+
+
+        $r->save();
+    }
+
 }

@@ -14,11 +14,17 @@ class Default_IndexController extends Zend_Controller_Action
         if ($this->_request->isPost()) {
             $formData = $this->_request->getPost();
             if ($form->isValid($formData)) {
-
+                Registration::save($form->getValues());
+                $this->_redirect('index/thanks');
             } else {
                 $form->populate($formData);
             }
         }
+    }
+
+    public function thanksAction()
+    {
+        
     }
 
 

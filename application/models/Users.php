@@ -12,5 +12,24 @@
  */
 class Users extends BaseUsers
 {
+    /**
+     * Perform authentication of a user
+     * @param string $username
+     * @param string $password
+     */
+    public static function authenticate($email, $password) {
+        $user = Doctrine_Core::getTable('Users')->findOneByEmail($email);
 
+        if ($user) {
+            if ($user->password == sha1($password)) {
+                // Update after login
+                $user->updated = new Doctrine_Expression('NOW()');
+                $user->save();
+                return $user;
+            } else {
+                throw new Exception(self::WRONG_PW);
+            }
+        }
+        throw new Exception(self::NOT_FOUND);
+    }
 }
