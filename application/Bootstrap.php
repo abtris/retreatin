@@ -37,5 +37,29 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
         return $conn;
     }
 
+    /**
+     * View Helpers
+     */
+    protected function _initViewHelpers () {
+        $this->bootstrap('layout');
+        $layout = $this->getResource('layout');
+        $view = $layout->getView();
+
+        $view->addHelperPath('ZendX/JQuery/View/Helper/', 'ZendX_JQuery_View_Helper');
+        $view->doctype('XHTML1_STRICT');
+        $view->headMeta()->appendHttpEquiv('Content-Type',
+                'text/html;charset=utf-8');
+        $view->headTitle()->setSeparator(' | ');
+        $view->headTitle('Retreat registration');
+        $view->headMeta()->appendName('author', 'Dzogchen.cz');
+        $view->headMeta()->appendName('copyright', 'Dzogchen Comunity');
+
+        $viewRenderer = new Zend_Controller_Action_Helper_ViewRenderer();
+        $viewRenderer->setView($view);
+        Zend_Controller_Action_HelperBroker::addHelper($viewRenderer);
+
+
+    }
+
 }
 

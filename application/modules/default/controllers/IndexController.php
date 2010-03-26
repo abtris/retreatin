@@ -10,9 +10,18 @@ class Default_IndexController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        // action body
+        $this->view->form = $form = new Application_Form_Registration();
+        if ($this->_request->isPost()) {
+            $formData = $this->_request->getPost();
+            if ($form->isValid($formData)) {
+
+            } else {
+                $form->populate($formData);
+            }
+        }
     }
 
 
 }
+
 

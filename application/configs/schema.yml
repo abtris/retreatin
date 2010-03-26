@@ -21,3 +21,35 @@ Groups:
     name:
       type: string(255)
       notnull: true
+Registration:
+  columns:
+    id:
+      primary: true
+      type: integer(4)
+      autoincrement: true
+    name: string(255)
+    surname: string(255)
+    email: string(255)
+    country: string(255)
+    gar: integer(4)
+    membershipnumber : string(20)
+    membershiptype: integer(4)
+    recording: boolean
+    wholeretreat: boolean
+    datefrom: date
+    dateto: date
+    children: boolean
+    childrencount: integer(4)
+    eat: boolean
+    rem: string
+actAs:
+  Timestampable:
+    created:
+      name: created
+    updated:
+      name: updated
+options:
+  type: INNODB
+  collate: utf8_general_ci
+  charset: utf8
+      
