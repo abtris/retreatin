@@ -38,6 +38,16 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
     }
 
     /**
+     * init config for admin
+     * @return void
+     */
+    protected function _initConfig () {
+        $this->_config = new Zend_Config_Ini('../application/configs/'.
+                        'application.ini', APPLICATION_ENV);
+        Zend_Registry::getInstance()->set('config', $this->_config);
+    }
+
+    /**
      * View Helpers
      */
     protected function _initViewHelpers () {
