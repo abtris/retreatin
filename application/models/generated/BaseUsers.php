@@ -40,11 +40,25 @@ abstract class BaseUsers extends Doctrine_Record
              'type' => 'integer',
              'length' => '4',
              ));
+
+        $this->option('type', 'INNODB');
+        $this->option('collate', 'utf8_general_ci');
+        $this->option('charset', 'utf8');
     }
 
     public function setUp()
     {
         parent::setUp();
-        
+        $timestampable0 = new Doctrine_Template_Timestampable(array(
+             'created' => 
+             array(
+              'name' => 'created',
+             ),
+             'updated' => 
+             array(
+              'name' => 'updated',
+             ),
+             ));
+        $this->actAs($timestampable0);
     }
 }
