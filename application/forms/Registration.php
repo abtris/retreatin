@@ -63,7 +63,8 @@ class Application_Form_Registration extends Zend_Form
                     2 => 'Ordinary members',
                     3 => 'Sustaining members',
                     4 => 'Sustaining members (non Merigar)',
-                    5 => 'Reduced members')
+                    5 => 'Reduced members',
+                    6 => 'Meritorious members')
         ));
 
         $this->addElement('radio', 'recording', array(
