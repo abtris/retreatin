@@ -1,9 +1,9 @@
 body {  background: #990000;
         font-family: arial;
         color: white;
-        font-size: 12px;
+        font-size: 12pt;
         padding: 20px 40px 40px;
         text-align: justify;
 }
 
-#content { border: 20px solid #FF7900;}
+#content { border: 20px solid #FF7900; padding: 30px; }
