@@ -48,6 +48,7 @@ class Application_Form_Registration extends Zend_Form
                 5 => 'Namgyalgar',
                 6 => 'Merigar East',
                 7 => 'Merigar West',
+                8 => 'Kunsangar'
             )
         ));
 
