@@ -25,11 +25,30 @@ class Default_IndexController extends Zend_Controller_Action
         }
     }
 
+    public function ruAction()
+    {
+        $this->view->form = $form = new Application_Form_Registration('ru');
+        if ($this->_request->isPost()) {
+            $formData = $this->_request->getPost();
+            if ($form->isValid($formData)) {
+                Registration::saveRegistration($form->getValues());
+                $this->_redirect('index/ruthanks');
+            } else {
+                $form->populate($formData);
+            }
+        }
+    }    
+    
+    
     public function thanksAction()
     {
         
     }
 
+    public function ruthanksAction()
+    {
+        
+    }    
 
 }
 

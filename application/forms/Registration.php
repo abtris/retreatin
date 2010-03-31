@@ -11,20 +11,74 @@
  */
 class Application_Form_Registration extends Zend_Form
 {
-    public function init()
-    {
+    public function __construct($lang = 'en')
+    {          
+        parent::__construct();
+    $labels = array('en' => array('name' =>'Name', 
+                                             'surname'=>'Surname',
+                                             'email' => 'E-mail',
+                                            'country'=>'Country',
+                                            'gar' => 'Gar',
+                                            'membershipnumber' => 'Membership number',
+                                            'membershiptype' => 'Membership type',
+                                            '--- please select your membership type  ---' =>'--- please select your membership type  ---',
+                                            'Non-members'=>'Non-members',
+                                            'Ordinary members' =>'Ordinary members',
+                                            'Sustaining members' => 'Sustaining members',
+                                            'Sustaining members (non Merigar)' => 'Sustaining members (non Merigar)',
+                                            'Reduced members' => 'Reduced members',
+                                            'Meritorious members' => 'Meritorious members',
+                                            'recording' => 'I order recording of the Teaching',
+                                            'yes' => 'yes',
+                                            'no' => 'no',
+                                            'wholeretreat'=>'I will take a part in the whole retreat',
+                                            'datefrom'=>'I will take a part in the retreat by days from:',
+                                            'dateto' => 'to',
+                                            'children'=>'I come with children',
+                                            'childrencount'=>'How many?',
+                                            'eat'=>'I will eat in the Gar',
+                                            'save'=>'Register'
+                                            ),
+                             'ru' => array('name' =>'Имя', 
+                                             'surname'=>'Фамилия',
+                                             'email' => 'E-mail',
+                                            'country'=>'Страна',
+                                            'gar' => 'Гар',
+                                            'membershipnumber' => 'Членский номер',
+                                            'membershiptype' => 'Тип членства',
+                                            '--- please select your membership type  ---' =>'--- please select your membership type  ---',
+                                            'Non-members'=>'Non-members',
+                                            'Ordinary members' =>'Ordinary members',
+                                            'Sustaining members' => 'Sustaining members',
+                                            'Sustaining members (non Merigar)' => 'Sustaining members (non Merigar)',
+                                            'Reduced members' => 'Reduced members',
+                                            'Meritorious members' => 'Meritorious members',
+                                            'recording' => 'Я заказываю запись ретрита',
+                                            'yes' => 'да',
+                                            'no' => 'нет',
+                                            'wholeretreat'=>'Я приму участие во всем ретрите:',
+                                            'datefrom'=>'Я приму участие в ретрите по дням с:',
+                                            'dateto' => 'по',
+                                            'children'=>'Я приеду с детьми',
+                                            'childrencount'=>'В количестве',
+                                            'eat'=>'Я буду заказывать обеды в гаре',
+                                            'save'=>'Зарегистрироваться'
+                             )
+    );                             
+    
+
         $this->addElement('text', 'name', array(
-            'Label' => 'Name',
+            'Label' => $labels[$lang]['name'],
             'required' => true
         ));
 
         $this->addElement('text', 'surname', array(
-            'Label' => 'Surname',
+            'Label' => $labels[$lang]['surname'],
             'required' => true
         ));
 
         $this->addElement('text', 'email', array(
-                'Label' => 'E-mail',
+                'Label' => $labels[$lang]['email'],
                 'validators' => array(
                     'EmailAddress'
                 ),
@@ -32,13 +86,13 @@ class Application_Form_Registration extends Zend_Form
         ));
 
         $this->addElement('text', 'country', array(
-            'Label' => 'Country',
+            'Label' => $labels[$lang]['country'],
             'required' => true
         ));
 
 
         $this->addElement('select', 'gar', array(
-            'Label' => 'Gar',
+            'Label' => $labels[$lang]['gar'],
             'multioptions' => array(
                 0 => '--- please select your gar ---',
                 1 => 'Tsegyalgar East',
@@ -53,11 +107,11 @@ class Application_Form_Registration extends Zend_Form
         ));
 
         $this->addElement('text', 'membershipnumber', array(
-                'Label'=>'Membership number'
+                'Label'=>$labels[$lang]['membershipnumber']
         ));
 
         $this->addElement('select', 'membershiptype', array(
-                'Label' => 'Membership type',
+                'Label' => $labels[$lang]['membershiptype'],
                 'multioptions' => array(
                     0 => '--- please select your membership type  ---',
                     1 => 'Non-members',
@@ -69,45 +123,45 @@ class Application_Form_Registration extends Zend_Form
         ));
 
         $this->addElement('radio', 'recording', array(
-                'Label' => 'I order recording of the Teaching',
-                'multioptions' => array(1 => 'yes', 2 => 'no'),
+                'Label' => $labels[$lang]['recording'],
+                'multioptions' => array(1 => $labels[$lang]['yes'], 2 => $labels[$lang]['no']),
                 'required'=> true
         ));
 
 
         $this->addElement('radio', 'wholeretreat', array(
-            'Label' => 'I will take a part in the whole retreat',
-            'multioptions' => array(1 => 'yes', 2 => 'no'),
+            'Label' => $labels[$lang]['wholeretreat'],
+            'multioptions' => array(1 => $labels[$lang]['yes'], 2 => $labels[$lang]['no']),
             'required'=> true
         ));
 
 
         $this->addElement('text', 'datefrom',array (
-                'Label' => 'I will take a part in the retreat by days from:'
+                'Label' => $labels[$lang]['datefrom']
         ));
 
         $this->addElement('text', 'dateto',array (
-                'Label' => 'to:'
+                'Label' => $labels[$lang]['dateto']
         ));
 
         $this->addElement('radio', 'children', array(
-                'Label' => 'I come with children',
-                'multioptions' => array(1 => 'yes', 2 => 'no'),
+                'Label' => $labels[$lang]['children'],
+                'multioptions' => array(1 => $labels[$lang]['yes'], 2 => $labels[$lang]['no']),
                 'required'=> true
         ));
 
         $this->addElement('text', 'childrencount', array (
-                'Label' => 'How many?'
+                'Label' => $labels[$lang]['childrencount']
         ));
 
         $this->addElement('radio', 'eat', array(
-                'Label' => 'I will eat in the Gar',
-                'multioptions' => array(1 => 'yes', 2 => 'no'),
+                'Label' => $labels[$lang]['eat'],
+                'multioptions' => array(1 => $labels[$lang]['yes'], 2 => $labels[$lang]['no']),
                 'required'=> true
         ));
         
         $this->addElement('submit', 'save', array(
-            'label' => 'Register',
+            'label' => $labels[$lang]['save'],
             'ignore' => true
         ));
     }
