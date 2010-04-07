@@ -38,7 +38,23 @@ class Default_IndexController extends Zend_Controller_Action
             }
         }
     }    
-    
+
+    public function roAction()
+    {
+        $this->view->form = $form = new Application_Form_Registration('ro');
+        if ($this->_request->isPost())
+        {
+            $formData = $this->_request->getPost();
+            if ($form->isValid($formData))
+            {
+                Registration::saveRegistration($form->getValues());
+                $this->_redirect('index/rothanks');
+            } else
+            {
+                $form->populate($formData);
+            }
+        }
+    }
     
     public function thanksAction()
     {
@@ -48,7 +64,13 @@ class Default_IndexController extends Zend_Controller_Action
     public function ruthanksAction()
     {
         
-    }    
+    }
+
+
+    public function rothanksAction()
+    {
+        
+    }
 
 }
 
