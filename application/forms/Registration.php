@@ -81,6 +81,40 @@ class Application_Form_Registration extends Zend_Form
                                             'gar6' => 'Восточный Меригар',
                                             'gar7' => 'Западный Меригар',
                                             'gar8' => 'Кунсангар'
+                             ),
+                            'ro' => array('name' =>'Prenume',
+                                     'surname'=>'Nume',
+                                     'email' => 'Adresa e-mail',
+                                     'country'=>'Tara de origine',
+                                     'gar' => 'Gar',
+                                     'membershipnumber' => 'Numar de membru',
+                                     'membershiptype' => 'Categoria de membru',
+                                     '--- please select your membership type  ---' =>'--- please select your membership type  ---',
+                                     'Non-members'=>'Non-membri',
+                                     'Ordinary members' =>'Membri obisnuiti',
+                                     'Sustaining members' => 'Membri sustinatori (afiliati la centrul Merigar)',
+                                     'Sustaining members (non Merigar)' => 'Membri sustinatori (afiliati la un alt Gar)',
+                                     'Reduced members' => 'Membri cu reducere',
+                                     'Meritorious members' => 'Meritorious members',
+                                     'recording' => 'Solicit o copie audio a materialului retragerii',
+                                     'yes' => 'da',
+                                     'no' => 'nu',
+                                     'wholeretreat'=>'Doresc sa particip la intreaga retragere',
+                                     'datefrom'=>'Doresc sa particip la retragere doar partial din data de:',
+                                     'dateto' => 'pana in data de',
+                                     'children'=>'Doresc sa particip la retragere insotit(a) de copil',
+                                     'childrencount'=>'cati?',
+                                     'eat'=>'Intentionez sa iau masa la Gar',
+                                     'save'=>'Inregistrare',
+                                     'garselect' => '--- please select your gar ---',
+                                     'gar1' => 'Tsegyalgar East',
+                                     'gar2' => 'Tsegyalgar West',
+                                     'gar3' => 'Tashigar Sur',
+                                     'gar4' => 'Tashigar Norte',
+                                     'gar5' => 'Namgyalgar',
+                                     'gar6' => 'Merigar East',
+                                     'gar7' => 'Merigar West',
+                                     'gar8' => 'Kunsangar'
                              )
     );                             
     
@@ -112,15 +146,15 @@ class Application_Form_Registration extends Zend_Form
         $this->addElement('select', 'gar', array(
             'Label' => $labels[$lang]['gar'],
             'multioptions' => array(
-                0 => '--- please select your gar ---',
-                1 => 'Tsegyalgar East',
-                2 => 'Tsegyalgar West',
-                3 => 'Tashigar Sur',
-                4 => 'Tashigar Norte',
-                5 => 'Namgyalgar',
-                6 => 'Merigar East',
-                7 => 'Merigar West',
-                8 => 'Kunsangar'
+                0 => $labels[$lang]['garselect'],
+                1 => $labels[$lang]['gar1'],
+                2 => $labels[$lang]['gar2'],
+                3 => $labels[$lang]['gar3'],
+                4 => $labels[$lang]['gar4'],
+                5 => $labels[$lang]['gar5'],
+                6 => $labels[$lang]['gar6'],
+                7 => $labels[$lang]['gar7'],
+                8 => $labels[$lang]['gar8']
             )
         ));
 
@@ -131,13 +165,13 @@ class Application_Form_Registration extends Zend_Form
         $this->addElement('select', 'membershiptype', array(
                 'Label' => $labels[$lang]['membershiptype'],
                 'multioptions' => array(
-                    0 => '--- please select your membership type  ---',
-                    1 => 'Non-members',
-                    2 => 'Ordinary members',
-                    3 => 'Sustaining members',
-                    4 => 'Sustaining members (non Merigar)',
-                    5 => 'Reduced members',
-                    6 => 'Meritorious members')
+                    0 => $labels[$lang]['--- please select your membership type  ---'],
+                    1 => $labels[$lang]['Non-members'],
+                    2 => $labels[$lang]['Ordinary members'],
+                    3 => $labels[$lang]['Sustaining members'],
+                    4 => $labels[$lang]['Sustaining members (non Merigar)'],
+                    5 => $labels[$lang]['Reduced members'],
+                    6 => $labels[$lang]['Meritorious members'])
         ));
 
         $this->addElement('radio', 'recording', array(
