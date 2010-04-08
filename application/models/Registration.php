@@ -41,12 +41,17 @@ class Registration extends BaseRegistration
     Спасибо за сотрудничество.
     До встречи в Гаре\n";
         }
-
+        // to user
         $options['from'] = "webmaster@dzogchen.cz";
         $options['to'] = $array['email'];
         $options['subject'] = $subject;
-        $options['body'] = $body."\n\n".implode("\n",$array);
-
+        $options['body'] = $body;
+        ZFCore_Utils::sendEmail($options);
+        // to admin
+        $options['from'] = "webmaster@dzogchen.cz";
+        $options['to'] = 'martin.kourim@gmail.com';
+        $options['subject'] = "[RETREAT] new registration";
+        $options['body'] = 'Add registration: '.var_export($array, true);
         ZFCore_Utils::sendEmail($options);
     }
 
