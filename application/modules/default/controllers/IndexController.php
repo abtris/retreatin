@@ -31,7 +31,7 @@ class Default_IndexController extends Zend_Controller_Action
         if ($this->_request->isPost()) {
             $formData = $this->_request->getPost();
             if ($form->isValid($formData)) {
-                Registration::saveRegistration($form->getValues());
+                Registration::saveRegistration($form->getValues(), 'ru');
                 $this->_redirect('index/ruthanks');
             } else {
                 $form->populate($formData);
@@ -47,7 +47,7 @@ class Default_IndexController extends Zend_Controller_Action
             $formData = $this->_request->getPost();
             if ($form->isValid($formData))
             {
-                Registration::saveRegistration($form->getValues());
+                Registration::saveRegistration($form->getValues(), 'ro');
                 $this->_redirect('index/rothanks');
             } else
             {

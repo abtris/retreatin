@@ -16,7 +16,7 @@ class Registration extends BaseRegistration
      * Save Registration
      * @param <type> $array
      */
-    public static function saveRegistration($array)
+    public static function saveRegistration($array, $lang = null)
     {
         $r  = new Registration();
         
@@ -26,7 +26,28 @@ class Registration extends BaseRegistration
         }
          
         ZFCore_Utils::log('Add registration: '.var_export($array, true));
-        $r->save();        
+        $r->save();
+
+        if (is_null($lang)) {
+            $subject = "Retreat with Chögyal Namkhai Norbu";
+            $body = "You are registered for the retreat in Merigar East. Thank you for the collaboration. See you in the Gar! \n";
+        } elseif ($lang == 'ro') {
+            $subject = "Retragerea de Invataturi Dzogchen cu Chögyal Namkhai Norbu";
+            $body = "Cererea Dvs. de participare la retragerea din Merigar Est a fost inregistrata.\n  Va multumim pentru colaborare.
+                     Va asteptam cu drag la Gar.\n";
+        } elseif ($lang == 'ru') {
+            $subject = "Ретрит с Чгъялом Намкай Норбу";
+            $body = "Вы зарешгистрированны на ретрит в Восточном Меригаре.
+    Спасибо за сотрудничество.
+    До встречи в Гаре\n";
+        }
+
+        $options['from'] = "webmaster@dzogchen.cz";
+        $options['to'] = $array['email'];
+        $options['subject'] = $subject;
+        $options['body'] = $body."\n\n".implode("\n",$array);
+
+        ZFCore_Utils::sendEmail($options);
     }
 
 }
