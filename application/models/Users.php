@@ -12,6 +12,11 @@
  */
 class Users extends BaseUsers
 {
+     const NOT_FOUND = 1;
+     const WRONG_PW  = 2;
+     const BAN  = 3;
+     const NOT_VERIFY = 4;
+
     /**
      * Perform authentication of a user
      * @param string $username

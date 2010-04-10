@@ -1,0 +1,12 @@
+Groups:
+  Groups_1:
+    name: Admins
+    created: '2010-04-10 18:08:17'
+    updated: '2010-04-10 18:08:17'
+Users:
+  Users_1:
+    email: webmaster@dzogchen.cz
+    password: d033e22ae348aeb5660fc2140aec35850c4da997
+    groupMember: '1'
+    created: '2010-04-10 18:08:01'
+    updated: '2010-04-10 18:08:01'

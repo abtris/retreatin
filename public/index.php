@@ -1,5 +1,14 @@
 <?php
-
+/**
+ * Shutdown
+ * Fixes problem with spl_autoload with Doctrine
+ */
+function shutdown()
+{
+    Zend_Session::writeClose(true);
+}
+// register shutdown
+register_shutdown_function('shutdown');
 // Define path to application directory
 defined('APPLICATION_PATH')
     || define('APPLICATION_PATH', realpath(dirname(__FILE__) . '/../application'));

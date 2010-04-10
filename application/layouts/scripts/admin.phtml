@@ -1,1 +1,28 @@
-<?php echo $this->layout()->content; ?>
+<?php echo $this->docType() ?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <?php echo $this->headTitle() ?>
+        <?php echo $this->headScript() ?>
+        <?php echo $this->headMeta() ?>
+        <?php echo $this->headLink()->toString(); ?>
+
+        <?php echo $this->headLink()->prependStylesheet($this->baseUrl().'/css/admin.css');
+        ?>
+
+
+    </head>
+    <body>
+        <div id="header">
+            <?php
+            if (Zend_Auth::getInstance()->hasIdentity()) {
+            echo $this->loggedUser();
+            }
+            ?>
+        </div>
+        <div id="content">
+
+            <?php echo $this->layout()->content; ?>
+        </div>
+</body>
+</html>
