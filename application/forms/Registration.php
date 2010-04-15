@@ -46,7 +46,8 @@ class Application_Form_Registration extends Zend_Form
                                             'gar5' => 'Namgyalgar',
                                             'gar6' => 'Merigar East',
                                             'gar7' => 'Merigar West',
-                                            'gar8' => 'Kunsangar'
+                                            'gar8' => 'Kunsangar',
+                                            'other' => 'I will participate in Moscow or Crimean (in Kunsangar) retreat and want to use special offer'
                                             ),
                              'ru' => array('name' =>'Имя', 
                                              'surname'=>'Фамилия',
@@ -80,7 +81,8 @@ class Application_Form_Registration extends Zend_Form
                                             'gar5' => 'Намгъялгар',
                                             'gar6' => 'Восточный Меригар',
                                             'gar7' => 'Западный Меригар',
-                                            'gar8' => 'Кунсангар'
+                                            'gar8' => 'Кунсангар',
+                                            'other' => 'Я приму участие в московском или крымскомв (Кунсангаре) ретрите и хочу воспользоваться специальным предложением'
                              ),
                             'ro' => array('name' =>'Prenume',
                                      'surname'=>'Nume',
@@ -114,7 +116,8 @@ class Application_Form_Registration extends Zend_Form
                                      'gar5' => 'Namgyalgar',
                                      'gar6' => 'Merigar East',
                                      'gar7' => 'Merigar West',
-                                     'gar8' => 'Kunsangar'
+                                     'gar8' => 'Kunsangar',
+                                     'other' => 'Intentionez sa particip la una din retragerile organizate la Moscova sau Crimeea in (Kunsangar) si solicit posibilitatea de a ma folosi de oferta promotional)'
                              )
     );                             
     
@@ -172,6 +175,12 @@ class Application_Form_Registration extends Zend_Form
                     4 => $labels[$lang]['Sustaining members (non Merigar)'],
                     5 => $labels[$lang]['Reduced members'],
                     6 => $labels[$lang]['Meritorious members'])
+        ));
+
+        $this->addElement'radio', 'other', array(
+                'Label'=> $labels[$lang]['other'],
+                'multioptions' => array(1 => $labels[$lang]['yes'], 2 => $labels[$lang]['no']),
+                'required' => true
         ));
 
         $this->addElement('radio', 'recording', array(

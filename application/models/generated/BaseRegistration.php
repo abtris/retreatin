@@ -19,6 +19,7 @@
  * @property string $dateto
  * @property boolean $children
  * @property integer $childrencount
+ * @property boolean $other
  * @property boolean $eat
  * @property string $rem
  * 
@@ -86,6 +87,9 @@ abstract class BaseRegistration extends Doctrine_Record
         $this->hasColumn('childrencount', 'integer', 4, array(
              'type' => 'integer',
              'length' => '4',
+             ));
+        $this->hasColumn('other', 'boolean', null, array(
+             'type' => 'boolean',
              ));
         $this->hasColumn('eat', 'boolean', null, array(
              'type' => 'boolean',
