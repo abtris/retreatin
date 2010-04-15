@@ -177,7 +177,7 @@ class Application_Form_Registration extends Zend_Form
                     6 => $labels[$lang]['Meritorious members'])
         ));
 
-        $this->addElement'radio', 'other', array(
+        $this->addElement('radio', 'other', array(
                 'Label'=> $labels[$lang]['other'],
                 'multioptions' => array(1 => $labels[$lang]['yes'], 2 => $labels[$lang]['no']),
                 'required' => true
